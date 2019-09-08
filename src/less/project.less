@@ -4,3 +4,12 @@
 
 //Imgage's paths
 @img_path: '../img';
+
+//Mixins
+.arrow(@width_height; @deg) {
+    display: inline-block;
+    width: @width_height;
+    height: @width_height;
+    transform: rotate(@deg);
+}
+

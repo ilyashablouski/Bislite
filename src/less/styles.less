@@ -15,6 +15,7 @@ body {
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 h2 {
@@ -376,6 +377,7 @@ h2 {
         justify-content: space-between;
 
         &-meta {
+            margin-left: 2px;
             display: flex;
             flex-basis: 156px;
             justify-content: space-between;
@@ -390,12 +392,25 @@ h2 {
                     background: url("@{img_path}/icons/icon-arrow.png") no-repeat;
                 }
             }
-        
+
             &__text {
-                
+                margin-top: 6px;
             }
         }
     }
+}
+
+.toggle {
+    flex-basis: 51px;
+    text-align: center;
+}
+
+.toggle__button-left {
+    margin-right: 2px;
+}
+
+.toggle__button-right {
+    margin-left: 3px;
 }
 
 .button-left {
@@ -427,15 +442,29 @@ h2 {
 .works {
     &-gallery {
         .row-flex();
-
+        .md(justify-content, space-evenly);
         justify-content: space-between;
         max-width: 1000px;
         border-top: 1px solid #dfe1e5;
         border-bottom: 1px solid #dfe1e5;
 
+        &__meta {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding-bottom: 81px;
+            opacity: 0;
+            background: @color_blue;
+            
+            &:hover {
+                opacity: 1;
+            }
+        }
 
-
-        img {
+        .works-gallery__image {
+            position: relative;
+            display: flex;
+            max-width: 300px;
             .col();
             .size-md(6);
             .size-xs(12);
@@ -445,6 +474,10 @@ h2 {
             .md(margin-left, 15px);
             .md(margin-right, 15px);
             .md(margin-bottom, 30px);
+
+            >img {
+                .md(width, 300px)
+            }
         }
     }
 
@@ -452,6 +485,23 @@ h2 {
         margin: 0 auto;
         margin-top: 11px;
         padding-top: 20px;
-        padding-bottom: 41px;
+        padding-bottom: 39px;
     }
 }
+
+.works-gallery__preview, .works-gallery__link  {
+    .preview_link();
+}
+
+.works-gallery__preview {
+    .md(left, 80px);
+    left: 70px;
+    background: url("@{img_path}/icons/icon-preview.png") no-repeat;
+}
+
+.works-gallery__link {
+    .md(right, 80px);
+    right: 45px;
+    background: url("@{img_path}/icons/icon-link.png") no-repeat;
+}
+

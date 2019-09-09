@@ -326,7 +326,7 @@ h2 {
         &_screen,
         &_list,
         &_plane {
-            &::after {
+            &:after {
                 content: "";
                 display: block;
                 width: 40px;
@@ -336,28 +336,28 @@ h2 {
         }
 
         &_pen {
-            &::after {
+            &:after {
                 background: url("@{img_path}/icons/icon-pen.png") no-repeat;
                 background-position: center;
             }
         }
 
         &_screen {
-            &::after {
+            &:after {
                 background: url("@{img_path}/icons/icon-screen.png") no-repeat;
                 background-position: center;
             }
         }
 
         &_list {
-            &::after {
+            &:after {
                 background: url("@{img_path}/icons/icon-list.png") no-repeat;
                 background-position: center;
             }
         }
 
         &_plane {
-            &::after {
+            &:after {
                 background: url("@{img_path}/icons/icon-plane.png") no-repeat;
                 background-position: 10px center;
             }
@@ -383,14 +383,10 @@ h2 {
             justify-content: space-between;
 
             &__cursor {
-
-                &:after {
-                    content: "";
-                    display: inline-block;
-                    width: 14px;
-                    height: 24px;
-                    background: url("@{img_path}/icons/icon-arrow.png") no-repeat;
-                }
+                display: inline-block;
+                width: 14px;
+                height: 24px;
+                background: url("@{img_path}/icons/icon-arrow.png") no-repeat;
             }
 
             &__text {
@@ -455,7 +451,7 @@ h2 {
             padding-bottom: 81px;
             opacity: 0;
             background: @color_blue;
-            
+
             &:hover {
                 opacity: 1;
             }
@@ -483,13 +479,14 @@ h2 {
 
     &__works-gallery {
         margin: 0 auto;
-        margin-top: 11px;
+        margin-top: 14px;
         padding-top: 20px;
         padding-bottom: 39px;
     }
 }
 
-.works-gallery__preview, .works-gallery__link  {
+.works-gallery__preview,
+.works-gallery__link {
     .preview_link();
 }
 
@@ -505,3 +502,87 @@ h2 {
     background: url("@{img_path}/icons/icon-link.png") no-repeat;
 }
 
+.offering-block {
+    .row-flex();
+    justify-content: space-between;
+
+    &__inner {
+        margin-top: 22px;
+    }
+}
+
+.testimonials {
+    .col();
+    .size(6);
+    .size-md(12);
+
+    max-width: 426px;
+    font-size: 14px;
+    line-height: 24px;
+
+    &__text {
+        margin-left: 1px;
+        margin-top: 11px;
+        margin-bottom: 23px;
+    }
+
+    &__title {
+        margin-left: 1px;
+        font-weight: bold;
+        font-style: italic;
+    }
+}
+
+.clients {
+    .col();
+    .size(6);
+    .size-md(12);
+
+    max-width: 481px;
+}
+
+.header-meta {
+    display: flex;
+
+    &__icon {
+        margin-right: 15px;
+        display: inline-block;
+        width: 24px;
+
+        &_comments {
+            height: 23px;
+            background: url("@{img_path}/icons/icon-comments.png") no-repeat;
+        }
+
+        &_clients {
+            height: 20px;
+            background: url("@{img_path}/icons/icon-clients.png") no-repeat;
+
+        }
+    }
+}
+
+.clients .header-meta__text {
+    margin-top: 4px;
+}
+
+.clients .header-meta__icon {
+    margin-left: 2px;
+}
+
+.clients-list__inner {
+    margin-top: 16px;
+}
+
+.clients-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        max-height: 101px;
+    }
+
+    // img{
+
+    // }
+}

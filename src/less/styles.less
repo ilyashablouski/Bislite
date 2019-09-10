@@ -284,6 +284,7 @@ h2 {
 
     &-text {
         line-height: 20px;
+        color: @color_text_grey;
     }
 
     &__info-block-text {
@@ -505,6 +506,8 @@ h2 {
 .offering-block {
     .row-flex();
     justify-content: space-between;
+    .md(justify-content, space-evenly);
+
 
     &__inner {
         margin-top: 22px;
@@ -515,6 +518,7 @@ h2 {
     .col();
     .size(6);
     .size-md(12);
+    .md(max-width, 481px);
 
     max-width: 426px;
     font-size: 14px;
@@ -524,12 +528,14 @@ h2 {
         margin-left: 1px;
         margin-top: 11px;
         margin-bottom: 23px;
+        color: @color_text_grey;
     }
 
     &__title {
         margin-left: 1px;
         font-weight: bold;
         font-style: italic;
+        color: @color_text_grey;
     }
 }
 
@@ -537,6 +543,7 @@ h2 {
     .col();
     .size(6);
     .size-md(12);
+    .md(margin-top, 40px);
 
     max-width: 481px;
 }
@@ -580,9 +587,66 @@ h2 {
 
     &__item {
         max-height: 101px;
+        margin: auto;
+    }
+}
+
+.download-block {
+    border: 1px solid @color_blue_light;
+    background-color: #e8fcfe;
+
+    &__container {
+        margin-top: 40px;
     }
 
-    // img{
+    &__inner {
+        display: flex;
+        .md(flex-wrap, wrap);
+        justify-content: space-between;
+        padding: 30px 37px 20px 31px;
+        .sm(padding, 30px 15px 20px 15px);
+    }
 
-    // }
+    &__text {
+        .md(max-width, 100%);
+        max-width: 608px;
+        font-size: 16px;
+        line-height: 26px;
+        color: @color_text_grey;
+    }
+}
+
+.download-button { 
+    min-width: 241px;
+    &__inner {
+        .md(align-self, center);
+        .md(margin, 40px auto 0px);
+        margin-top: 9px;
+        margin-left: 20px;
+    }
+    
+    &__link {
+        position: relative;
+        display: flex;
+        padding: 20px 20px 17px 69px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        color: #0d0707;
+        background: @color_blue;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), inset 0 2px 1px rgba(255, 255, 255, 0.1);
+        background-image: linear-gradient(to top, @color_blue 0%, #60cede 15%, #72dae6 50%, @color_blue_light 100%);
+        border: 1px solid @color_blue;
+        border-radius: 9px;
+    }
+
+    &__icon {
+        position: absolute;
+        left: 18px;
+        bottom: 18px;
+        width: 28px;
+        height: 25px;
+        background: url("@{img_path}/icons/icon-download.png") no-repeat;
+    }
+
 }

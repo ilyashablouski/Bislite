@@ -3,10 +3,6 @@
 
 .reset();
 
-html {
-    height: 5000px;
-}
-
 body {
     max-width: 1600px;
     font-family: Arial, sans-serif;
@@ -64,7 +60,6 @@ h2 {
 }
 
 .nav {
-    margin-right: 15px;
     display: flex;
     justify-content: space-between;
     flex-basis: 621px;
@@ -73,8 +68,8 @@ h2 {
     text-transform: uppercase;
 
     &__inner {
+        margin-right: 15px;
         padding: 3px 3px 0 0;
-
     }
 }
 
@@ -597,13 +592,14 @@ h2 {
 
     &__container {
         margin-top: 40px;
+        margin-bottom: 40px;
     }
 
     &__inner {
         display: flex;
         .md(flex-wrap, wrap);
         justify-content: space-between;
-        padding: 30px 37px 20px 31px;
+        padding: 30px 37px 31px 31px;
         .sm(padding, 30px 15px 20px 15px);
     }
 
@@ -616,8 +612,9 @@ h2 {
     }
 }
 
-.download-button { 
+.button { 
     min-width: 241px;
+
     &__inner {
         .md(align-self, center);
         .md(margin, 40px auto 0px);
@@ -648,5 +645,154 @@ h2 {
         height: 25px;
         background: url("@{img_path}/icons/icon-download.png") no-repeat;
     }
+}
 
+.text {
+    color: @color_text_grey;
+    font-size: 14px;
+}
+
+footer {
+    background: @color_grey;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+
+    &__inner {
+        padding-top: 29px;
+    }
+}
+
+.footer-about {
+    width: 234px;
+
+    &__inner {
+        margin-right: -10px;
+    }
+    
+
+    &__text {
+        line-height: 17px;
+        margin-top: 21px;
+    }
+}
+
+.footer-explore {
+    width: 71px;
+
+    &__footer-nav {
+        margin-top: 3px;
+    }
+}
+
+.footer-browse {
+    &__inner {
+        margin-right: -12px;
+    }
+
+    width: 105px;
+
+    &__footer-nav {
+        margin-top: 3px;
+    }
+}
+
+.footer-contact {
+    width: 136px;
+
+    &__inner {
+        margin-right: -26px;
+    }
+
+    &__text {
+        margin-top: 17px;
+        &_mg1 {
+            font-weight: bold;
+        }
+    }
+}
+
+.footer-social {
+    width: 193px;
+
+    h2 {
+        margin-left: 13px;
+    }
+}
+
+.footer-nav {
+    line-height: 26px;
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.icon {
+    display: inline-block;
+    width: 53px;
+    height: 51px;
+
+    &_fb {
+        background: url("@{img_path}/social/facebook.png") no-repeat;
+        margin-top: 17px;
+        margin-left: 4px;
+    }
+
+    &_dr {
+        background: url("@{img_path}/social/dribbble.png") no-repeat;
+        margin-top: 17px;
+    }
+
+    &_pt {
+        background: url("@{img_path}/social/pinterest.png") no-repeat;
+        margin-top: 17px;
+        margin-right: -4px;
+    }
+
+    &_ln {
+        background: url("@{img_path}/social/linkedin.png") no-repeat;
+        margin-top: 8px;
+        margin-left: 4px;
+    }
+
+    &_sk {
+        background: url("@{img_path}/social/skype.png") no-repeat;
+        margin-top: 8px;
+    }
+
+    &_sh {
+        background: url("@{img_path}/social/share.png") no-repeat;
+        margin-top: 8px;
+        margin-right: -4px;
+    }
+}
+
+.footer-site-info {
+    &__inner {
+        margin-top: 22px;
+        margin-left: 1px;
+        padding-bottom: 35px;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text{
+        max-width: 641px;
+        font-size: 13px;
+        line-height: 18px;
+        color: @color_text_grey;
+    }
+
+    &__logo {
+        margin-top: 2px;
+        margin-right: -2px;
+    }
 }

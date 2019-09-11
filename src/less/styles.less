@@ -52,11 +52,12 @@ h2 {
             font-weight: 400;
         }
     }
-}
 
-.logo__inner {
-    margin-left: -2px;
-    padding-bottom: 10px;
+    &__inner {
+        margin-left: -2px;
+        padding-right: 30px;
+        padding-bottom: 10px;
+    }
 }
 
 .nav {
@@ -116,8 +117,12 @@ h2 {
 
 .slider-container {
     padding-top: 20px;
-    min-height: 480px;
+    max-height: 480px;
     background: @color_blue_light;
+
+    &__inner {
+        padding-bottom: 14px;
+    }
 }
 
 .slider {
@@ -129,10 +134,16 @@ h2 {
 
     &__text {
         &:extend(.logo);
-        padding: 0 0 19px 62px;
+        padding: 0 1.9% 19px 6.2%;
         flex-basis: 294px;
         font-weight: 700;
         color: #ffffff;
+
+        .md(font-size, 4vw);
+    }
+
+    &__img {
+        max-height: 440px;
     }
 }
 
@@ -659,6 +670,7 @@ footer {
 
 .footer-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
     &__inner {
@@ -668,6 +680,8 @@ footer {
 
 .footer-about {
     width: 234px;
+
+    .sm(display, none);
 
     &__inner {
         margin-right: -10px;
@@ -703,6 +717,10 @@ footer {
 .footer-contact {
     width: 136px;
 
+    .sm(margin, 0);
+    .sm(flex-basis, 100px);
+
+
     &__inner {
         margin-right: -26px;
     }
@@ -717,6 +735,8 @@ footer {
 
 .footer-social {
     width: 193px;
+
+    .sm(flex-grow, 1);
 
     h2 {
         margin-left: 13px;
@@ -773,6 +793,28 @@ footer {
     }
 }
 
+@media (max-width: 900px) {
+    .footer-container {
+        justify-content: space-between;
+    }
+
+    .footer-about,
+    .footer-explore, 
+    .footer-browse {
+        flex-basis: 25%;
+    }
+
+    .footer-contact,
+    .footer-social {
+        flex-basis: 50%;
+        margin-top: 40px;
+    }
+    
+    .icon {
+        margin: 17px 0 0 0;
+    }
+} 
+
 .footer-site-info {
     &__inner {
         margin-top: 22px;
@@ -781,6 +823,7 @@ footer {
     }
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
@@ -794,5 +837,16 @@ footer {
     &__logo {
         margin-top: 2px;
         margin-right: -2px;
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 852px) {
+    .footer-site-info {
+        justify-content: center;
+    }
+
+    .footer-site-info__logo {
+        padding: 20px 0 0 0;
     }
 }

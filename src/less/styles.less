@@ -39,8 +39,11 @@ h2 {
     background-color .2s ease,
     padding-top .2s ease,
     padding-bottom .2s ease;
-
     z-index: 5;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        height: 70px;
+    }
 
     &_tiny {
         padding: 0px 0px;
@@ -60,6 +63,11 @@ h2 {
     min-height: 70px;
     max-width: 1000px;
     margin: 0 auto;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        justify-content: flex-start;
+        height: 70px;
+    }
 }
 
 .logo {
@@ -102,6 +110,18 @@ h2 {
 }
 
 //Бургер-меню 
+
+@media (max-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .logo__inner {
+        display: flex;
+        align-items: center;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        padding-bottom: 0;
+        min-height: 70px;
+    }
+}
 
 @media (max-width: 768px) {
 
@@ -290,6 +310,13 @@ h2 {
 
     &__img {
         max-height: 440px;
+    }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    img {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -591,7 +618,7 @@ h2 {
 .works {
     &-gallery {
         .row-flex();
-        .md(justify-content, space-evenly);
+        .md(justify-content, center);
         justify-content: space-between;
         max-width: 1000px;
         border-top: 1px solid #dfe1e5;
@@ -626,7 +653,6 @@ h2 {
 
             >img {
                 .md(width, 300px);
-                .md(height, auto);
             }
         }
     }

@@ -20,11 +20,17 @@ h2 {
     text-transform: uppercase;
 }
 
+
 .wrapper {
     .wrapper();
 }
 
 .header {
+
+    .ie11({
+            height: 70px;
+        });
+
     position: fixed;
     left: 0;
     margin-top: -121px;
@@ -35,15 +41,10 @@ h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     background-color: rgba(232, 235, 241, 1);
-    transition:
-    background-color .2s ease,
+    transition: background-color .2s ease,
     padding-top .2s ease,
     padding-bottom .2s ease;
     z-index: 5;
-
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        height: 70px;
-    }
 
     &_tiny {
         padding: 0px 0px;
@@ -52,6 +53,13 @@ h2 {
 }
 
 .header_tiny .logo {
+    line-height: 70px;
+    font-size: 40px;
+}
+
+.header_tiny .logo__inner {
+    padding-bottom: 0;
+    line-height: 70px;
     font-size: 40px;
 }
 
@@ -60,13 +68,13 @@ h2 {
     padding: 0 15px;
     justify-content: space-between;
     align-items: center;
-    min-height: 70px;
+    height: 70px;
     max-width: 1000px;
     margin: 0 auto;
 
-    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @media (max-width: 768px) and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
         justify-content: flex-start;
-        height: 70px;
     }
 }
 
@@ -93,7 +101,9 @@ h2 {
 }
 
 .menu {
-    flex-basis: 621px;
+    width: 621px;
+
+    .ie10({width: 75%;});
 
     &__inner {
         margin-right: 15px;
@@ -107,6 +117,62 @@ h2 {
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
+
+
+    .ie10({
+        display: block;
+        text-align: right;
+    });
+}
+
+.menu__link {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #000000;
+
+    .ie10({
+        margin-right: 2.4vw;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    });
+
+    .arrow {
+        margin-left: 10px;
+        margin-bottom: 5px;
+        color: #000000;
+    }
+
+    &_2 {
+        margin-left: 15px;
+    }
+
+    &_3 {
+        margin-left: 16px;
+    }
+
+    &_5 {
+        margin-right: 15px;
+    }
+
+    &_6 {
+        margin-right: -1px;
+    }
+}
+
+.menu__item_blue {
+    color: @color_blue;
+}
+
+.arrow {
+    display: inline-block;
+    vertical-align: middle;
+    width: 3.5px;
+    height: 3.5px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    transform: rotate(45deg);
 }
 
 //Бургер-меню 
@@ -132,7 +198,7 @@ h2 {
     }
 
     div.logo {
-        &__inner{
+        &__inner {
             position: absolute;
             right: 15px;
             margin: 0;
@@ -151,12 +217,12 @@ h2 {
 
         cursor: pointer;
         z-index: 2;
-    
+
     }
 
-    .menu__btn > span,
-    .menu__btn > span::before,
-    .menu__btn > span::after {
+    .menu__btn>span,
+    .menu__btn>span::before,
+    .menu__btn>span::after {
         display: block;
         position: absolute;
 
@@ -166,14 +232,14 @@ h2 {
         background: #2aacc8;
 
         transition: .25s;
-    } 
+    }
 
-    .menu__btn > span::before {
+    .menu__btn>span::before {
         content: '';
         top: -8px;
     }
 
-    .menu__btn > span::after {
+    .menu__btn>span::after {
         content: '';
         top: 8px;
     }
@@ -181,12 +247,14 @@ h2 {
     .menu__btn_active {
         span {
             transform: rotate(45deg);
-            &:before {
+
+            &::before {
                 top: 0;
                 transform: rotate(0);
             }
-            &:after {
-                top:0;
+
+            &::after {
+                top: 0;
                 transform: rotate(90deg);
             }
         }
@@ -230,7 +298,7 @@ h2 {
         &_blue {
             color: #000000;
         }
-        
+
         .arrow {
             display: none;
         }
@@ -238,47 +306,6 @@ h2 {
 }
 
 //Конец бургера
-
-.menu__link {
-    text-transform: uppercase;
-    color: #000000;
-
-    .arrow {
-        margin-left: 10px;
-        margin-bottom: 5px;
-        color: #000000;
-    }
-
-    &_2 {
-        margin-left: 15px;
-    }
-
-    &_3 {
-        margin-left: 16px;
-    }
-
-    &_5 {
-        margin-right: 15px;
-    }
-
-    &_6 {
-        margin-right: -1px;
-    }
-}
-
-.menu__item_blue {
-    color: @color_blue;
-}
-
-.arrow {
-    display: inline-block;
-    vertical-align: middle;
-    width: 3.5px;
-    height: 3.5px;
-    border-right: 2px solid;
-    border-bottom: 2px solid;
-    transform: rotate(45deg);
-}
 
 .slider-container {
     padding-top: 20px;
@@ -297,11 +324,13 @@ h2 {
     justify-content: space-between;
     align-items: center;
     background: #dc5735;
+    
 
     &__text {
+        flex: 0 1 auto;
         &:extend(.logo);
         padding: 0 1.9% 19px 6.2%;
-        flex-basis: 294px;
+        max-width: 294px;
         font-weight: 700;
         color: #ffffff;
 
@@ -309,14 +338,12 @@ h2 {
     }
 
     &__img {
+        flex: 0 1 auto;
         max-height: 440px;
     }
-}
 
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     img {
         width: 100%;
-        height: auto;
     }
 }
 
@@ -331,6 +358,7 @@ h2 {
     }
 
     &__circle {
+        display: inline-block;
         width: 14px;
         height: 14px;
         border-radius: 50%;
@@ -478,6 +506,7 @@ h2 {
         align-items: center;
 
         &__arrow {
+            display: inline-block;
             width: 3.5px;
             height: 3.5px;
             border-top: 2px solid;
@@ -497,6 +526,7 @@ h2 {
     align-items: center;
 
     &__logo {
+        display: inline-block;
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -506,7 +536,7 @@ h2 {
         &_screen,
         &_list,
         &_plane {
-            &:after {
+            &::after {
                 content: "";
                 display: block;
                 width: 40px;
@@ -516,28 +546,28 @@ h2 {
         }
 
         &_pen {
-            &:after {
+            &::after {
                 background: url("@{img_path}/icons/icon-pen.png") no-repeat;
                 background-position: center;
             }
         }
 
         &_screen {
-            &:after {
+            &::after {
                 background: url("@{img_path}/icons/icon-screen.png") no-repeat;
                 background-position: center;
             }
         }
 
         &_list {
-            &:after {
+            &::after {
                 background: url("@{img_path}/icons/icon-list.png") no-repeat;
                 background-position: center;
             }
         }
 
         &_plane {
-            &:after {
+            &::after {
                 background: url("@{img_path}/icons/icon-plane.png") no-repeat;
                 background-position: 10px center;
             }
@@ -652,7 +682,7 @@ h2 {
             .md(margin-bottom, 30px);
 
             >img {
-                .md(width, 300px);
+                .md(width, 100%);
             }
         }
     }
@@ -1024,3 +1054,4 @@ footer {
         padding: 20px 0 0 0;
     }
 }
+

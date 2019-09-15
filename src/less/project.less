@@ -14,7 +14,7 @@
     transform: rotate(@deg);
 }
 
-.preview_link () {
+.preview_link() {
     position: absolute;
     margin: auto;
     top: 0;
@@ -22,4 +22,16 @@
     width: 35px;
     height: 25px;
     vertical-align: middle;
+}
+
+.ie11(@content) {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content();
+    }
+}
+
+.ie10(@content) {
+    @media screen and (min-width:0\0) {
+        @content();
+    }
 }

@@ -3,7 +3,13 @@
 
 .reset();
 
+html, body {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     max-width: 1600px;
     font-family: Arial, sans-serif;
     margin: 0 auto;
@@ -375,6 +381,10 @@ h2 {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     background-color: @color_grey;
+}
+
+.main-content {
+    flex: 1 0 auto;
 }
 
 .wrapper__info-block-container {
@@ -866,7 +876,9 @@ h2 {
     font-size: 14px;
 }
 
-footer {
+.footer {
+    flex: 0 0 auto;
+    width: 100%;
     background: @color_grey;
     border-top: 1px solid rgba(0, 0, 0, 0.15);
 }

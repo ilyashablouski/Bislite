@@ -725,14 +725,18 @@ h2 {
 }
 
 .offering-block {
+    &__inner {
+        .row-flex();
+        justify-content: space-between;
+        .md(justify-content, center);
+    }
+}
+
+.wrapper__offering-block {
+    margin: 22px auto 0 auto;
     .row-flex();
     justify-content: space-between;
-    .md(justify-content, space-evenly);
-
-
-    &__inner {
-        margin-top: 22px;
-    }
+    .md(justify-content, center);
 }
 
 .testimonials {
@@ -813,24 +817,30 @@ h2 {
 }
 
 .download-block {
+    display: flex;
     border: 1px solid @color_blue_light;
     background-color: #e8fcfe;
 
     &__container {
+        margin: 0 auto;
         margin-top: 40px;
         margin-bottom: 40px;
+        width: 100%;
+        max-width: 998px;
     }
 
     &__inner {
-        display: flex;
+        display: flex; 
         .md(flex-wrap, wrap);
         justify-content: space-between;
         padding: 30px 37px 31px 31px;
         .sm(padding, 30px 15px 20px 15px);
+        width: 100%;
     }
 
     &__text {
         .md(max-width, 100%);
+        .md(text-align, justify);
         max-width: 608px;
         font-size: 16px;
         line-height: 26px;
@@ -839,7 +849,7 @@ h2 {
 }
 
 .button {
-    min-width: 241px;
+    max-width: 241px;
 
     &__inner {
         .md(align-self, center);

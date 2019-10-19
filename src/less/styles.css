@@ -102,7 +102,6 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  max-width: 1600px;
   font-family: Arial, sans-serif;
   margin: 0 auto;
 }
@@ -130,7 +129,7 @@ h2 {
 .header {
   position: fixed;
   left: 0;
-  margin-top: -121px;
+  top: 0;
   width: 100%;
   min-height: 70px;
   padding-top: 25px;
@@ -353,6 +352,12 @@ h2 {
     display: none;
   }
 }
+.wrapper-container {
+  flex: 1 0 auto;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1600px;
+}
 .slider-container {
   padding-top: 20px;
   max-height: 480px;
@@ -412,9 +417,6 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   background-color: #e8ebf1;
-}
-.main-content {
-  flex: 1 0 auto;
 }
 .wrapper__info-block-container {
   padding-top: 60px;
@@ -971,7 +973,6 @@ h2 {
 }
 .footer-contact__text .span-mg-t {
   display: inline-block;
-  margin-top: 4px;
 }
 .footer-social {
   width: 193px;
@@ -1013,16 +1014,16 @@ h2 {
 }
 .icon_ln {
   background: url("../img/social/linkedin.png") no-repeat;
-  margin-top: 8px;
+  margin-top: 5px;
   margin-left: 4px;
 }
 .icon_sk {
   background: url("../img/social/skype.png") no-repeat;
-  margin-top: 8px;
+  margin-top: 5px;
 }
 .icon_sh {
   background: url("../img/social/share.png") no-repeat;
-  margin-top: 8px;
+  margin-top: 5px;
   margin-right: -4px;
 }
 @media (max-width: 900px) {

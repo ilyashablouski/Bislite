@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
    * 
    * @see  {@link https://nickpiscitelli.github.io/Glider.js/}
    */
-
+  
+  // Main slider
   new Glider(document.querySelector('.glider'), {
     slidesToShow: 1,
     dots: '.dots',
@@ -37,5 +38,4 @@ document.addEventListener("DOMContentLoaded", () => {
       next: '.glider-next'
     }
   });
-
 });

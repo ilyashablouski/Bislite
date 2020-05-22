@@ -345,15 +345,55 @@ h2 {
 
 // Slider
 
-.glider-dot.active {
+.glider-dot.active,
+.glider-dot:focus,
+.glider-dot:hover {
     background: #fff;
 }
 
 .glider-dot {
     margin: 8.8px;
+    margin-top: 12px;
+    margin-bottom: 0;
     width: 14px;
     height: 14px;
     background: #71a3a7;
+}
+
+.glider-next,
+.glider-prev {
+    left: 15px;
+    top: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 0;
+    background: #ffffff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+
+    .xs-block({
+        display: none;
+    });
+}
+
+.glider-next {
+    right: 15px;
+    left: auto;
+}
+
+button .slider-arrow {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    right: 3px;
+}
+
+button .slider-arrow.button-left__arrow {
+    left: 3px;
+}
+
+.glider-next.disabled, .glider-prev.disabled {
+    opacity: .35;
 }
 
 .slide {

@@ -27,15 +27,40 @@ document.addEventListener("DOMContentLoaded", () => {
    * 
    * @see  {@link https://nickpiscitelli.github.io/Glider.js/}
    */
-  
+
   // Main slider
-  new Glider(document.querySelector('.glider'), {
+  let slider = new Glider(document.querySelector('.glider'), {
     slidesToShow: 1,
+    slidesToScroll: 1,
     dots: '.dots',
     draggable: true,
+    scrollLock: true,
+    rewind: true,
     arrows: {
       prev: '.glider-prev',
       next: '.glider-next'
     }
   });
+
+  let autoplayDelay = 5000;
+  let element = document.querySelector('.glider');
+
+  let autoplay = setInterval(() => {
+    slider.scrollItem('next')
+  }, autoplayDelay);
+
+  element.addEventListener('mouseover', (event) => {
+    if (autoplay != null) {
+      clearInterval(autoplay);
+      autoplay = null;
+    }
+  }, 300);
+
+  element.addEventListener('mouseout', (event) => {
+    if (autoplay == null) {
+      autoplay = setInterval(() => {
+        slider.scrollItem('next')
+      }, autoplayDelay);
+    }
+  }, 300);
 });

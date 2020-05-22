@@ -3,7 +3,8 @@
 
 .reset();
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -32,9 +33,11 @@ h2 {
 
 .header {
 
-    .ie11({
+    .ie11( {
             height: 70px;
-        });
+        }
+
+    );
 
     position: fixed;
     left: 0;
@@ -108,7 +111,11 @@ h2 {
 .menu {
     width: 621px;
 
-    .ie10({width: 75%;});
+    .ie10( {
+            width: 75%;
+        }
+
+    );
 
     &__inner {
         margin-right: 15px;
@@ -124,10 +131,12 @@ h2 {
     text-transform: uppercase;
 
 
-    .ie10({
-        display: block;
-        text-align: right;
-    });
+    .ie10( {
+            display: block;
+            text-align: right;
+        }
+
+    );
 }
 
 .menu__link {
@@ -135,13 +144,15 @@ h2 {
     text-transform: uppercase;
     color: #000000;
 
-    .ie10({
-        margin-right: 2.4vw;
+    .ie10( {
+            margin-right: 2.4vw;
 
-        &:last-child {
-            margin-right: 0px;
+            &:last-child {
+                margin-right: 0px;
+            }
         }
-    });
+
+    );
 
     .arrow {
         margin-left: 10px;
@@ -182,7 +193,8 @@ h2 {
 
 //Бургер-меню 
 
-@media (max-width: 768px) and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media (max-width: 768px) and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
     .logo__inner {
         display: flex;
         align-items: center;
@@ -265,7 +277,7 @@ h2 {
         }
     }
 
-    .menu__btn_active ~ .menu__box {
+    .menu__btn_active~.menu__box {
         left: 0;
         visibility: visible;
     }
@@ -282,6 +294,7 @@ h2 {
 
         margin-left: -15px;
         padding: 90px 0;
+        text-align: left;
 
         background: rgba(232, 235, 241, 1);
         box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
@@ -330,13 +343,26 @@ h2 {
     }
 }
 
-.slider {
+// Slider
+
+.glider-dot.active {
+    background: #fff;
+}
+
+.glider-dot {
+    margin: 8.8px;
+    width: 14px;
+    height: 14px;
+    background: #71a3a7;
+}
+
+.slide {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     background: #dc5735;
-    
+
 
     &__text {
         flex: 0 1 auto;
@@ -356,29 +382,6 @@ h2 {
 
     img {
         width: 100%;
-    }
-}
-
-.wrapper-circles {
-    display: flex;
-    justify-content: space-between;
-    width: 141px;
-
-    &__inner {
-        margin: 0 auto;
-        margin-top: 12px;
-    }
-
-    &__circle {
-        display: inline-block;
-        width: 14px;
-        height: 14px;
-        border-radius: 50%;
-        background: #71a3a7;
-    }
-
-    &__circle_white {
-        background: #ffffff;
     }
 }
 
@@ -657,6 +660,10 @@ h2 {
     }
 }
 
+.works-gallery__image:hover .works-gallery__meta {
+    opacity: 1;
+}
+
 .works {
     &-gallery {
         .row-flex();
@@ -673,16 +680,12 @@ h2 {
             padding-bottom: 81px;
             opacity: 0;
             background: @color_blue;
-
-            &:hover {
-                opacity: 1;
-            }
         }
 
         .works-gallery__image {
             position: relative;
-            display: flex;
             max-width: 300px;
+            font-size: 0;
             .col();
             .size-md(6);
             .size-xs(12);
@@ -827,10 +830,12 @@ h2 {
         margin-bottom: 40px;
         width: 100%;
         max-width: 998px;
+        box-sizing: border-box;
     }
 
     &__inner {
-        display: flex; 
+        display: flex;
+        box-sizing: border-box;
         .md(flex-wrap, wrap);
         justify-content: space-between;
         padding: 30px 37px 31px 31px;
@@ -958,7 +963,7 @@ h2 {
         &_mg1 {
             font-weight: bold;
         }
-    
+
         .span-mg-t {
             display: inline-block;
         }
@@ -984,6 +989,10 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    a {
+        display: inline-block;
+    }
 }
 
 .icon {
@@ -1010,18 +1019,18 @@ h2 {
 
     &_ln {
         background: url("@{img_path}/social/linkedin.png") no-repeat;
-        margin-top:5px;
+        margin-top: 5px;
         margin-left: 4px;
     }
 
     &_sk {
         background: url("@{img_path}/social/skype.png") no-repeat;
-        margin-top:5px;
+        margin-top: 5px;
     }
 
     &_sh {
         background: url("@{img_path}/social/share.png") no-repeat;
-        margin-top:5px;
+        margin-top: 5px;
         margin-right: -4px;
     }
 }
@@ -1065,13 +1074,17 @@ h2 {
         font-size: 13px;
         line-height: 18px;
         color: @color_text_grey;
-    }
 
-    &__logo {
-        margin-top: 2px;
-        margin-right: -2px;
-        padding-left: 30px;
+        @media screen and (min-width:0\0) and (max-width:852px) {
+            max-width: 100%;
+        }
     }
+}
+
+&__logo {
+    margin-top: 2px;
+    margin-right: -2px;
+    padding-left: 30px;
 }
 
 @media (max-width: 852px) {
@@ -1083,4 +1096,3 @@ h2 {
         padding: 20px 0 0 0;
     }
 }
-

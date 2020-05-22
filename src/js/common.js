@@ -1,8 +1,1 @@
-//Событие для гамбургера
-$('.menu__btn').on('click', function() {
-    $(this).toggleClass('menu__btn_active');
-});
-//Уменьшение хедера
-$(window).on("scroll touchmove", function () {
-    $('.header').toggleClass('header_tiny', $(document).scrollTop() > 120);
-});
+"use strict";document.addEventListener("DOMContentLoaded",function(){document.querySelector(".menu__btn").addEventListener("click",function(e){e.currentTarget.classList.toggle("menu__btn_active")}),window.addEventListener("scroll",function(){120<window.pageYOffset?document.querySelector(".header").classList.add("header_tiny"):document.querySelector(".header").classList.remove("header_tiny")}),window.addEventListener("touchmove",function(){120<window.pageYOffset?document.querySelector(".header").classList.add("header_tiny"):document.querySelector(".header").classList.remove("header_tiny")}),new Glider(document.querySelector(".glider"),{slidesToShow:1,dots:".dots",draggable:!0,arrows:{prev:".glider-prev",next:".glider-next"}})});

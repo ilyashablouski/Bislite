@@ -720,15 +720,17 @@ button .slider-arrow.button-left__arrow {
             padding-bottom: 81px;
             opacity: 0;
             background: @color_blue;
+
+            .md-block({
+                display: none;
+            });
         }
 
         .works-gallery__image {
             position: relative;
-            max-width: 300px;
+            max-width: 220px;
             font-size: 0;
             .col();
-            .size-md(6);
-            .size-xs(12);
 
             margin-left: 0;
             margin-right: 0;

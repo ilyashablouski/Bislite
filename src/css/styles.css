@@ -624,7 +624,7 @@ button .slider-arrow.button-left__arrow {
 
 .works-gallery .works-gallery__image {
   position: relative;
-  max-width: 300px;
+  max-width: 220px;
   font-size: 0;
   box-sizing: border-box;
   word-wrap: break-word;
@@ -1022,8 +1022,8 @@ __logo {
     justify-content: center;
   }
 
-  .works-gallery .works-gallery__image {
-    width: calc(50% - 30px);
+  .works-gallery__meta {
+    display: none;
   }
 
   .works-gallery .works-gallery__image {
@@ -1270,10 +1270,6 @@ __logo {
   }
 
   .info-block {
-    width: calc(100% - 30px);
-  }
-
-  .works-gallery .works-gallery__image {
     width: calc(100% - 30px);
   }
 }

@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
    * @see  {@link https://nickpiscitelli.github.io/Glider.js/}
    */
 
-  // Main slider
+  // Init main slider
   let slider = new Glider(document.querySelector('.glider'), {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -63,4 +63,50 @@ document.addEventListener("DOMContentLoaded", () => {
       }, autoplayDelay);
     }
   }, 300);
+
+  // Init small slider
+  new Glider(document.querySelector('.glider-sm'), {
+    slidesToShow: 1.5,
+    slidesToScroll: 1,
+    draggable: true,
+    scrollLock: true,
+    rewind: true,
+    arrows: {
+      prev: '.toggle__button-left',
+      next: '.toggle__button-right'
+    },
+    responsive: [{
+        // screens greater than >= 375px
+        breakpoint: 375,
+        settings: {
+          // Set to `auto` and provide item width to adjust to viewport
+          slidesToShow: 2,
+        }
+      },
+      {
+        // screens greater than >= 576px
+        breakpoint: 576,
+        settings: {
+          // Set to `auto` and provide item width to adjust to viewport
+          slidesToShow: 3,
+        }
+      },
+      {
+        // screens greater than >= 720px
+        breakpoint: 720,
+        settings: {
+          // Set to `auto` and provide item width to adjust to viewport
+          slidesToShow: 3.5,
+        }
+      },
+      {
+        // screens greater than >= 992px
+        breakpoint: 992,
+        settings: {
+          // Set to `auto` and provide item width to adjust to viewport
+          slidesToShow: 4.1,
+        }
+      }
+    ]
+  });
 });
